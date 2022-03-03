@@ -4,32 +4,32 @@ import java.util.List;
 
 public class Calculadora {
 
-	public static Integer maior(List<Integer> list) {
+	public static <T extends Comparable<T>>T maior(List<T> list) {
 
 		if (list.isEmpty()) {
 			throw new IllegalStateException("Erro: a lista está vazia");
 		}
 
-		Integer maior = list.get(0);
+		T maior = list.get(0);
 		
-		for (Integer i : list) {
-			if (i > maior) {
+		for (T i : list) {
+			if (i.compareTo(maior) < 0) {
 				maior = i;
 			}
 		}
 		return maior;
 	}
 
-	public static Integer menor(List<Integer> list) {
+	public static <T extends Comparable<T>> T menor(List<T> list) {
 
 		if (list.isEmpty()) {
 			throw new IllegalStateException("Erro: a lista está vazia");
 		}
 
-		Integer menor = list.get(0);
+		T menor = list.get(0);
 
-		for (Integer j : list) {
-			if (j < menor) {
+		for (T j : list) {
+			if (j.compareTo(menor) < 0) {
 				menor = j;
 			}
 		}
@@ -67,5 +67,7 @@ public class Calculadora {
 		}
 		return padraoMenor;
 	}
+
+	
 }
 

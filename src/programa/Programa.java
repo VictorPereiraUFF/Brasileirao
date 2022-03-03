@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dados.Calculadora;
+import times.Times;
 
 public class Programa {
 
@@ -15,13 +16,14 @@ public class Programa {
 		
 		List<Integer>lista = new ArrayList();
 		
-		String arquivo = "c:\\hacker\\entrada.txt";
+		String arquivo = "c:\\hacker\\br16.txt";
 		
 		try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
 			
 			String linha = br.readLine();
 			while (linha != null) {
-				lista.add(Integer.parseInt(linha));
+				String[] campos = linha.split("	");
+				lista.add(new Times(campos[1], Integer.parseInt(campos[2]), Integer.parseInt(campos[3]), Integer.parseInt(campos[4]), Integer.parseInt(campos[5]), Integer.parseInt(campos[6]), Integer.parseInt(campos[7]), Integer.parseInt(campos[8])));
 				linha = br.readLine();
 			}
 			
