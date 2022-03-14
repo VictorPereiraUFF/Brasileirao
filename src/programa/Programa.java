@@ -28,11 +28,8 @@ public class Programa {
 			
 			Times x = Calculadora.maior(lista);
 			Times y = Calculadora.menor(lista);
-			System.out.print("Maior: ");
+			System.out.print("Campeão: ");
 			System.out.println(x);
-			System.out.print("Menor: ");
-			System.out.println(y);
-
 		}
 		
 		catch (IOException e) {
